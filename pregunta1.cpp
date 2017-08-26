@@ -20,7 +20,7 @@ bool xyz(int n){
 }
 int main()
 {
-	for (int i = 0; i < 50; i++)
+	for (int i = 3; i < 50; i++)
 		cout << i<<": " << xyz(i)<<endl;
 	return 0;
 }
