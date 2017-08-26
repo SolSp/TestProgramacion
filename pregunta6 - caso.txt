@@ -1,4 +1,4 @@
 Pregunta 6
 Caso: 
 
-La mejor solución es crear un pool de objetos (object pool). El patrón de diseño object pool consiste en crear un conjunto de objetos que pueden ser reutilizados. Cuando se necesita un nuevo objeto, se extrae del conjunto. Si un objeto previamente preparado está disponible se devuelve inmediatamente, evitando así el costo de instanciarlos. Si no hay objetos disponibles, se crea uno nuevo y se agrega al conjunto. Cuando el objeto ha sido utilizado y ya no se necesita, se devuelve al conjunto, lo que le permite ser utilizado de nuevo en el futuro sin tener que repetir el proceso de instanciación computacionalmente costoso. 
+La mejor soluciÃ³n serÃ­a crear un pool de objetos (object pool). Se crea un conjunto de enemigos en un vector y cuando se desea utilizar uno se extra del conjunto. Cuando el objeto estÃ© nuevamente disponible se coloca en el conjunto para poder ser reutilizado y asÃ­ evitar el costo de instanciarlos. Solo en caso no hubiera objetos disponibles, se crea uno nuevo y se agrega al conjunto. 
