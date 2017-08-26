@@ -1,4 +1,7 @@
 //Encuentra los números primos mayores a 2
+#include <iostream>
+#include <math.h>
+using namespace std;
 
 bool xyz(int n){
 
