@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="phaser.min.js"></script>
+	<script type="text/javascript" src="Game.js"></script>
+	<script type="text/javascript" src="GameOver.js"></script>
+	<script type="text/javascript" src="YouWin.js"></script>
+	<script type="text/javascript" src="Player.js"></script>
+	<script type="text/javascript" src="Wall.js"></script>
+	<script type="text/javascript" src="Enemy.js"></script>
+	<script type="text/javascript" src="Bala.js"></script>
+
+
+</head>
+<body>
+	<script type="text/javascript">
+		var game= new Phaser.Game(500,500,Phaser.AUTO);
+		Global={};
+		game.state.add("Game",Game);
+		game.state.add("GameOver",GameOver);
+		game.state.add("YouWin",YouWin);
+		game.state.start("Game");
+	</script>
+
+</body>
+</html>
