@@ -1,4 +1,5 @@
-//Encuentra los números primos mayores a 2
+//El siguiente código encuentra los números primos mayores a 2
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -12,7 +13,7 @@ bool xyz(int n){
 
 	while (x <= j)
 	{
-		if (!(n%x))   // Si el modulo de n entre x es igual a O     
+		if (!(n%x)) 
 			return false;
 		else x++;
 	}
