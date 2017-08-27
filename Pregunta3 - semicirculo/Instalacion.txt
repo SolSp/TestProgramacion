@@ -1,0 +1,8 @@
+Pasos a seguir:
+	1. incluir los archivos glew32.dll y freeglut.dll en la carpeta principal del proyecto (donde se encuentre el cpp)
+	2. Agregar las librerias adicionales
+	(en visual studio)
+		2.1 project->properties->C/C++->General->Additional Include Directories
+		2.2 Agregar las rutas de las carpetas include de glew y freeglut
+		2.3 project->properties->linker-> Input -> Additional Dependencies
+		2.4 Agregar las rutas de las carpetas lib de glew y freeglut
