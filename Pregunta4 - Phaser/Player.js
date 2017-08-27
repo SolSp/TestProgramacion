@@ -4,14 +4,9 @@ Player=function(game,x,y)
     Phaser.Sprite.call(this,game,x,y,'dude');
     game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
-    this.body.setSize(30,30);
-    this.width=30;
-    this.height=30;
-    this.puntos=0;
-    this.numBalas=0;
+    this.scale.setTo(2,2);
     this.vidas=5;
-    this.enemigosMatados=0;
-    
+ 
     this.animations.add('left frame',[12, 13, 14, 15],10,true); 
     this.animations.add('right frame',[8, 9, 10, 11],10,true);
     this.animations.add('front frame',[0, 1, 2, 3],10,true); 

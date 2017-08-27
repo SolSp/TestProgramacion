@@ -10,11 +10,9 @@ Game.prototype={
 		this.load.image("bullet","assets/bullet.png");
 		this.load.image("exit","assets/exit.PNG");
 		this.load.image("wall","assets/wall.PNG");
-		this.load.image("contra2","assets/exit.png");
 		this.load.spritesheet("invader","assets/invader32x32x4.png",32,32,4);
 		this.load.spritesheet("dude","assets/player.png",16,16);
 		this.load.spritesheet("fruta","assets/fruta.png",32,32);
-
 	},
 	create:function()
 	{
@@ -25,7 +23,6 @@ Game.prototype={
 			this.background=this.add.tileSprite(0,0,this.world.width,this.world.height,"background2");
 		else
 			this.background=this.add.tileSprite(0,0,this.world.width,this.world.height,"starfield");
-		console.log(this.world.width/2);
 		
 		this.player=new Player(this.game,this.world.width-80,this.world.height-2);
 		this.game.add.existing(this.player);
@@ -43,25 +40,15 @@ Game.prototype={
 			this.WallGroup.add(this.wall);
 		}
 		
-		
 		this.EnemyGrupo=this.add.group();
 		this.game.time.events.loop(this.tiempo,this.createEnemy,this);
 		Global.cursors=this.input.keyboard.createCursorKeys();
 		this.fontStyle2={font:'15px Arial',fill:'#FFFFFF',stroke:"#333",strokeThickness:5};
     	this.textVidas= this.add.text(15,0,"Vidas: ",this.fontStyle2);
     	this.textVidas.text="Vidas:"+this.player.vidas;
-    	this.segundos=0;
-    	
 	},
 	update:function()
 	{
-		this.segundos+=10;
-		if(this.segundos >= 300 && this.tiempo >=700)
-		{
-			this.tiempo-=100;
-			this.segundos=0;
-		}
-		
 		this.game.physics.arcade.overlap(this.player,this.EnemyGrupo,function(player,enemy)
 		{
 			if(enemy.tipo == "Fruta")
@@ -88,18 +75,17 @@ Game.prototype={
 			this.state.start("YouWin");
 		},null,this);
 		
-		this.game.physics.arcade.collide(this.player,this.WallGroup,function(player,wall)
+		this.game.physics.arcade.collide(this.player,this.WallGroup,function()
 		{
-			
+		
 		},null,this);
 
 		if(this.player.vidas<=0)
 		{
 			this.state.start("GameOver");
 		}
-		
 		this.textVidas.text="Vidas:"+this.player.vidas;
-
+		
 	},
 	createEnemy:function()
 	{
@@ -111,8 +97,6 @@ Game.prototype={
     		tipo="Invader";
     	else if(random>2&&random<4)
     		tipo="Honguito";    		
-    	else if(random>4&&random<5)
-    		tipo="Pandita";
     	var randomX=this.game.rnd.realInRange(0,this.game.width-50);
     	var enem=new Enemy(this.game,randomX,0,tipo);
     	this.EnemyGrupo.add(enem);

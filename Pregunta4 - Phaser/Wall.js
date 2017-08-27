@@ -13,6 +13,7 @@ Wall=function(game,x,y,tipo)
     	this.scale.setTo(0.3,0.3);
 	}
 	this.game.physics.arcade.enable(this);
+	this.body.collideWorldBounds = true;
 	this.body.immovable = true;
 	
 

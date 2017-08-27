@@ -22,20 +22,11 @@ Enemy=function(game,x,y,tipo)
 	{
     	Phaser.Sprite.call(this,game,x,y,'invader');		
 	}
-	else if(tipo=="Contra2")
-	{
-    	Phaser.Sprite.call(this,game,x,y,'contra2');
-		
-	}
 	else if(tipo=="Honguito")
 	{
     	Phaser.Sprite.call(this,game,x,y,'honguito');
 		
 	}
-	else if(tipo=="Pandita")
-	{
-    	Phaser.Sprite.call(this,game,x,y,'pandita');		
-	}	
 	this.game.physics.arcade.enable(this);	
 
 };

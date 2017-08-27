@@ -18,6 +18,6 @@ GameOver.prototype={
 	},
 	startGame:function()
 	{
-		game.state.start('Game');
+		this.state.start('Game');
 	}
 }
